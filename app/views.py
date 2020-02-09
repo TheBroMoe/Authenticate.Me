@@ -25,5 +25,3 @@ def handle_certificate_requests_by_id():
         # delete a request by id
         pass
 
-if __name__ == '__main__':
-    app.run(debug=True)
