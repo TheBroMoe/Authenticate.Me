@@ -1,4 +1,4 @@
-from app import app
+from flask import Flask, jsonify, request
 
 @app.route('/')
 def home():
