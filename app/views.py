@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 
 @app.route('/')
 def home():
-    return "Hello World!"
+    return "<b>There has been a change</b>"
 
 @app.route('/certificateRequest', methods= {'GET', 'POST', 'DELETE'})
 def handle_certificate_requests():
