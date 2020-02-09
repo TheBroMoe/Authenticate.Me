@@ -6,10 +6,7 @@ class DatabaseHander:
 
     def init(db_file):
         if not (DatabaseHander.instance):
-            DatabaseHander.instance = DatabaseHander.__getInstance()
-        pass
-
-    def __getInstance(self):
+            DatabaseHander.instance = DatabaseHander.getInstance()
         pass
 
     def create_connection(db_file):
@@ -28,16 +25,16 @@ class DatabaseHander:
         except Error as e:
             print(e)
 
-    def create_project(conn, project):
+    def create_request(conn, request):
 
         sql = ''' INSERT INTO projects(phone_num,input,content,QR,id,status,name)
                   VALUES(?,?,?,?,?,?,?) '''
         cur = conn.cursor()
-        cur.execute(sql, project)
+        cur.execute(sql, request)
         return cur.lastrowid
 
 
-    def delete_all_projects(conn):
+    def delete_all_requests(conn):
         """
         Delete all rows in the tasks table
         :param conn: Connection to the SQLite database
@@ -48,7 +45,7 @@ class DatabaseHander:
         cur.execute(sql)
         conn.commit()
 
-    def main():
+    def getInstance():
         database = r"C:\sqlite\db\pythonsqlite.db"
 
         sql_create_projects_table = """ CREATE TABLE IF NOT EXISTS projects (
