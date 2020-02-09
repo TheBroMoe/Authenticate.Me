@@ -1,39 +1,89 @@
 import React from 'react';
 import './App.css';
 import './components/form'
-// import StepperExample from './components/form';
+// import StepperExample from './components/personRegistration';
+// import CardExample from './components/cards';
+import Example from './components/home';
 import "bootstrap-css-only/css/bootstrap.min.css";
-
 import "mdbreact/dist/css/mdb.css";
-import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon } from "mdbreact";
+
+// import { useState } from 'react'
+// import { MDBJumbotron, MDBContainer, MDBRow, MDBCol, MDBCardBody, MDBCardText,  MDBCardTitle } from "mdbreact";
     
 
-
 function App() {
+
+  // const [ main, setMain] = useState(true);
+  // const [ person, setPerson] = useState(false);
+  // const [ company, setCompany] = useState(false);
+
+  // const handleMainChange = () =>{
+  //   setMain(!main)
+  //   console.log("status main page:", main)
+  //   }
+  // const handlePersonChange = () =>{
+  //   setPerson(!person)
+  //   console.log("status person page:", person)
+  //     }
+  // const handleCompanyChange = () =>{
+  //   setCompany(!company)
+  //   console.log("status company page:", company)
+  //       }
+  // const pageLoader = () => {
+
+  //   if (main === true && person === false && company && false )
+  //   {console.log('this')
+  //     return <div>Main Page</div>}
+
+  //   if (main === false && person === true && company && false ) 
+  //   {return <div>Person Page</div>}
+
+  //   if (main === false && person === false && company && true ) 
+  //   {return <div>Company Page</div>}
+
+
+  // }
       return (
-        <div>
-        <div style={{ backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)` }}>
-        <MDBContainer>
-          <MDBRow>
-            <MDBCol>
-              <MDBJumbotron style={{ padding: 0 }}>
-                <MDBCol className="text-white text-center py-5 px-4 my-5" style={{ backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)` }}>
-                  <MDBCol className="py-5">
-                    <MDBCardTitle className="h1-responsive pt-3 m-5 font-bold">Authenticate.Me</MDBCardTitle>
-                    <p className="mx-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                      optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos. Odit sed qui, dolorum!
-                    </p>
-                    <MDBBtn outline color="white" className="mb-5"><MDBIcon icon="clone" className="mr-2"></MDBIcon>Register Today</MDBBtn>
-                  </MDBCol>
-                </MDBCol>
-              </MDBJumbotron>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-        </div >
-        <div style={{ backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)` }}>
-        </div>
-          </div >
+  
+            <Example/>
+        
+          //   <MDBContainer className="mt-5 text-center">
+          //       <MDBRow>
+          //         <MDBCol>
+          //           <MDBJumbotron>
+          //             <MDBCardBody>
+          //               <MDBCardTitle className="h2">
+          //                 Authenticate Me
+          //               </MDBCardTitle>
+          //               <p className="blue-text my-4 font-weight-bold">
+          //                 A streamlined verifiable credentials user experience for EVERYONE!
+          //               </p>
+          //               <MDBCardText>
+          //                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+          //                 aliquid dolorem ea distinctio exercitationem delectus qui, quas
+          //                 eum architecto, amet quasi accusantium, fugit consequatur
+          //                 ducimus obcaecati numquam molestias hic itaque accusantium
+          //                 doloremque laudantium, totam rem aperiam.
+          //               </MDBCardText>
+          //               <hr className="my-4" />
+          //               <div className="pt-2">
+                     
+          //                 <CardExample/>
+          //               </div>
+          //             </MDBCardBody>
+          //           </MDBJumbotron>
+          //         </MDBCol>
+          //       </MDBRow>
+          //       <div>
+          //         <button onClick={handleMainChange}>Main</button>
+          //         <button onClick={handlePersonChange}>Person</button>
+          //         <button onClick={handleCompanyChange}>Company</button>
+          //       </div>
+          //       <div>
+          //       {pageLoader()}
+          //       <StepperExample/>
+          //       </div>
+          // </MDBContainer>
   );
 }
 

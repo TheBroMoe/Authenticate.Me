@@ -1,124 +1,79 @@
-// import React from "react";
-// import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } from "mdbreact";
-// import { MDBStepper, MDBStep } from 'mdbreact';
+import React from 'react';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
+const StepperExample = (props) => {
+  return (
+    <Form>
+      <FormGroup>
+        <Label for="exampleEmail">Email</Label>
+        <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+      </FormGroup>
+      <FormGroup>
+        <Label for="examplePassword">Password</Label>
+        <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+      </FormGroup>
+      <FormGroup>
+        <Label for="exampleSelect">Select</Label>
+        <Input type="select" name="select" id="exampleSelect">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </Input>
+      </FormGroup>
+      <FormGroup>
+        <Label for="exampleSelectMulti">Select Multiple</Label>
+        <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </Input>
+      </FormGroup>
+      <FormGroup>
+        <Label for="exampleText">Text Area</Label>
+        <Input type="textarea" name="text" id="exampleText" />
+      </FormGroup>
+      <FormGroup>
+        <Label for="exampleFile">File</Label>
+        <Input type="file" name="file" id="exampleFile" />
+        <FormText color="muted">
+          This is some placeholder block-level help text for the above input.
+          It's a bit lighter and easily wraps to a new line.
+        </FormText>
+      </FormGroup>
+      <FormGroup tag="fieldset">
+        <legend>Radio Buttons</legend>
+        <FormGroup check>
+          <Label check>
+            <Input type="radio" name="radio1" />{' '}
+            Option one is this and that—be sure to include why it's great
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Label check>
+            <Input type="radio" name="radio1" />{' '}
+            Option two can be something else and selecting it will deselect option one
+          </Label>
+        </FormGroup>
+        <FormGroup check disabled>
+          <Label check>
+            <Input type="radio" name="radio1" disabled />{' '}
+            Option three is disabled
+          </Label>
+        </FormGroup>
+      </FormGroup>
+      <FormGroup check>
+        <Label check>
+          <Input type="checkbox" />{' '}
+          Check me out
+        </Label>
+      </FormGroup>
+      <Button>Submit</Button>
+    </Form>
+  );
+}
 
-// class StepperExample extends React.Component {
-
-// state = {
-//   formActivePanel3: 1,
-//   formActivePanel1Changed: false,
-// }
-
-// swapFormActive = (a) => (param) => (e) => {
-//   this.setState({
-//     ['formActivePanel' + a]: param,
-//     ['formActivePanel' + a + 'Changed']: true
-//   });
-// }
-
-// handleNextPrevClick = (a) => (param) => (e) => {
-//   this.setState({
-//     ['formActivePanel' + a]: param,
-//     ['formActivePanel' + a + 'Changed']: true
-//   });
-// }
-
-// handleSubmission = () => {
-//   alert('Form submitted!');
-// }
-
-// calculateAutofocus = (a) => {
-//   if (this.state['formActivePanel' + a + 'Changed']) {
-//   return true
-//   }
-// }
-
-// render() {
-//   return (
-//     <MDBContainer>
-//       <MDBCard>
-//         <MDBCardBody>
-//           <MDBRow className="pt-5 justify-content-center">
-//             <MDBCol md="2" className="pl-5 pl-md-0 pb-5">
-//               <MDBStepper icon vertical>
-//                 <MDBStep far icon="folder-open" stepName="Basic Information" onClick={this.swapFormActive(3)(1)} vertical />
-//                 <MDBStep icon="pencil-alt" stepName="Personal Data" onClick={this.swapFormActive(3)(2)} vertical />
-//                 <MDBStep far icon="image" stepName="Terms and Conditions" onClick={this.swapFormActive(3)(3)} vertical />
-//                 <MDBStep icon="check" stepName="Finish" onClick={this.swapFormActive(3)(4)} vertical />
-//               </MDBStepper>
-//             </MDBCol>
-
-//             <MDBCol md="7">
-//               {this.state.formActivePanel3 === 1 && (
-//               <MDBCol md="12">
-//                 <h3 className="font-weight-bold pl-0 my-4">
-//                   <strong>Basic Information</strong>
-//                 </h3>
-//                 <MDBInput label="Email" className="mt-4" autoFocus={this.calculateAutofocus(3)} />
-//                 <MDBInput label="Username" className="mt-4" />
-//                 <MDBInput label="Password" className="mt-4" />
-//                 <MDBInput label="Repeat Password" className="mt-4" />
-//                 <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(3)(2)}>
-//                   next
-//                 </MDBBtn>
-//               </MDBCol>
-//               )}
-//               {this.state.formActivePanel3 === 2 && (
-//               <MDBCol md="12">
-//                 <h3 className="font-weight-bold pl-0 my-4">
-//                   <strong>Personal Data</strong>
-//                 </h3>
-//                 <MDBInput label="First Name" className="mt-3" autoFocus={this.calculateAutofocus(3)} />
-//                 <MDBInput label="Second Name" className="mt-3" />
-//                 <MDBInput label="Surname" className="mt-3" />
-//                 <MDBInput label="Address" type="textarea" rows="2" />
-//                 <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(3)(1)}>
-//                   previous
-//                 </MDBBtn>
-//                 <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(3)(3)}>
-//                   next
-//                 </MDBBtn>
-//               </MDBCol>
-//               )}
-//               {this.state.formActivePanel3 === 3 && (
-//               <MDBCol md="12">
-//                 <h3 className="font-weight-bold pl-0 my-4">
-//                   <strong>Terms and conditions</strong>
-//                 </h3>
-//                 <MDBInput label="I agreee to the terms and conditions" type="checkbox" id="checkbox3" autoFocus={this.calculateAutofocus(3)} />
-//                 <MDBInput label="I want to receive newsletter" type="checkbox" id="checkbox4" />
-//                 <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(3)(2)}>
-//                   previous
-//                 </MDBBtn>
-//                 <MDBBtn color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(3)(4)}>
-//                   next
-//                 </MDBBtn>
-//               </MDBCol>
-//               )}
-//               {this.state.formActivePanel3 === 4 && (
-//               <MDBCol md="12">
-//                 <h3 className="font-weight-bold pl-0 my-4">
-//                   <strong>Finish</strong>
-//                 </h3>
-//                 <h2 className="text-center font-weight-bold my-4">
-//                   Registration completed!
-//                 </h2>
-//                 <MDBBtn color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(3)(3)}>
-//                   previous
-//                 </MDBBtn>
-//                 <MDBBtn color="success" rounded className="float-right" onClick={this.handleSubmission}>
-//                   submit
-//                 </MDBBtn>
-//               </MDBCol>
-//               )}
-//             </MDBCol>
-//           </MDBRow>
-//         </MDBCardBody>
-//       </MDBCard>
-//     </MDBContainer>
-//     );
-//   };
-// }
-
-// export default StepperExample;
+export default StepperExample;
